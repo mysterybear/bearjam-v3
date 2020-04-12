@@ -1,0 +1,83 @@
+import { motion } from "framer-motion"
+import React from "react"
+import { defaultVariants } from "../animations"
+import Presence from "../components/Presence"
+
+const aniProps = {
+  variants: {
+    enter: {
+      opacity: 1,
+      y: 0
+    },
+    exit: {
+      opacity: 0,
+      y: -50
+    }
+  }
+}
+
+const BlogIndex = () => {
+  return (
+    <Presence key="blogIndex">
+      <motion.div {...defaultVariants}>
+        <p>hi im a blog</p>
+      </motion.div>
+    </Presence>
+  )
+}
+
+// const BlogIndex = ({ data }) => {
+//   const { edges: posts } = data.allMdx
+
+//   return (
+//     <Presence key="blogPage" className="mt-3 sm:mt-6">
+//       <SEO title="Blog" />
+//       <motion.h1 {...aniProps}>Awesome MDX Blog</motion.h1>
+
+//       <div>
+//         {posts
+//           .filter(({ node: post }) => post.excerpt.length > 20)
+//           .map(({ node: post }) => (
+//             <motion.div
+//               key={post.id}
+//               className="mb-6"
+//               {...aniProps}
+//             >
+//               <Link to={post.fields.slug}>
+//                 <h2 className="text-2xl">{post.frontmatter.title}</h2>
+//               </Link>
+//               <time className="date">{post.frontmatter.date}</time>
+//               <p>{post.excerpt}</p>
+//             </motion.div>
+//           ))}
+//       </div>
+//     </Presence>
+//   )
+// }
+
+// export const pageQuery = graphql`
+//   query blogIndex {
+//     allMdx(
+//       sort: {
+//         fields: [frontmatter___date]
+//         order: DESC
+//       }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           excerpt(pruneLength: 140)
+//           frontmatter {
+//             title
+//             date(formatString: "DD MMMM YYYY")
+//           }
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+export default BlogIndex

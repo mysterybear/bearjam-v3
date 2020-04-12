@@ -1,0 +1,76 @@
+@tailwind base;
+
+html, body, div#___gatsby, div#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+div#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: "Inter";
+  font-weight: normal;
+  @apply text-blue-900 overflow-x-hidden;
+}
+
+h1, h2, h3, a {
+  @apply text-blue-800;
+}
+
+h1 {
+  font-family: "Corben";
+  font-weight: bold;
+  @apply text-2xl mb-2;
+}
+h2 {
+  font-family: "Inter";
+  font-weight: bold;
+  @apply text-xl;
+}
+h3 {
+  font-family: "Inter";
+  font-weight: bold;
+  @apply text-lg;
+}
+
+a {
+  @apply font-semibold;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.touch-none {
+  touch-action: none;
+}
+
+.touch-y {
+  touch-action: pan-y;
+}
+
+.touch-auto {
+  touch-action: auto;
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+.flex-basis-40 {
+  flex-basis: 40%;
+}
+
+.date {
+  @apply font-light text-sm;
+}
+
+
+/* .gatsby-remark-autolink-headers-anchor>svg {
+  @apply absolute
+} */
+
+.flex-1-0-auto {
+  flex: 1 0 auto;
+}

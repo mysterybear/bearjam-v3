@@ -1,24 +1,45 @@
-import { AnimatePresence } from 'framer-motion';
-import React, { useEffect } from 'react';
-import Layout from '../components/layout';
+import { motion } from 'framer-motion';
+import * as R from 'ramda';
+import React from 'react';
+import { defaultVariants } from '../animations';
+import Presence from '../components/Presence';
 import AboutTemplate from './about';
-import DefaultTemplate from './default';
 
-const templateComponents = {
-  about: AboutTemplate,
-  default: DefaultTemplate,
-  index: DefaultTemplate
+const IndexTemplate = ({
+  frontmatter,
+  children
+}) => {
+  return (
+    <Presence key="indexTemplate">
+      <motion.div {...defaultVariants}>
+        <pre>foo: {frontmatter.foo}</pre>
+        {children}
+      </motion.div>
+    </Presence>
+  )
 }
 
-const IndexTemplate = ({ pageContext, children }) => {
-  const templateKey = pageContext.frontmatter.templateKey || 'default'
-  console.log(templateKey)
-  const Template = templateComponents[templateKey]
+const templateComponents = {
+  default: x => x,
+  index: IndexTemplate,
+  about: AboutTemplate,
+}
+
+const TemplateController = ({
+
+  pageContext: {
+    frontmatter
+  },
+  children
+}) => {
+  const templateKey = R.propOr('default', frontmatter.templateKey)
+  const Template = templateKey(templateComponents)
+
   return (
-    <Template>
+    <Template frontmatter={frontmatter}>
       {children}
     </Template>
   );
 }
 
-export default IndexTemplate;
+export default TemplateController;
