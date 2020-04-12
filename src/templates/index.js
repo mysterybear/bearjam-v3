@@ -12,7 +12,7 @@ const IndexTemplate = ({
   return (
     <Presence key="indexTemplate">
       <motion.div {...defaultVariants}>
-        <pre>foo: {frontmatter.foo}</pre>
+        <pre>frontmatter: {JSON.stringify(frontmatter, null, 2)}</pre>
         {children}
       </motion.div>
     </Presence>
