@@ -1,32 +1,15 @@
-import { motion } from 'framer-motion';
 import * as R from 'ramda';
 import React from 'react';
-import { defaultVariants } from '../animations';
-import Presence from '../components/Presence';
 import AboutTemplate from './about';
-
-const IndexTemplate = ({
-  frontmatter,
-  children
-}) => {
-  return (
-    <Presence key="indexTemplate">
-      <motion.div {...defaultVariants}>
-        <pre>frontmatter: {JSON.stringify(frontmatter, null, 2)}</pre>
-        {children}
-      </motion.div>
-    </Presence>
-  )
-}
+import HomeTemplate from './home';
 
 const templateComponents = {
   default: x => x,
-  index: IndexTemplate,
+  home: HomeTemplate,
   about: AboutTemplate,
 }
 
-const TemplateController = ({
-
+const TemplateIndex = ({
   pageContext: {
     frontmatter
   },
@@ -42,4 +25,4 @@ const TemplateController = ({
   );
 }
 
-export default TemplateController;
+export default TemplateIndex;
