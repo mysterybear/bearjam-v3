@@ -7,7 +7,6 @@ import SvgTomAvatar from '../components/SvgTomAvatar';
 const AboutPage = () => {
   return (
     <div>
-      <h1>sweet and lovely</h1>
       <Card
         avatar={SvgMagAvatar}
         name="Magda"
@@ -17,7 +16,7 @@ const AboutPage = () => {
           { Icon: IconLinkedIn, url: `https://linkedin.com/in/magdairispetford` },
           { Icon: IconInstagram, url: `https://instagram.com/bymagdairis` },
         ]}
-        body="Magda is a digital designer with a background in film, photography and marketing."
+        body="Magda is a digital designer with a background in film, photography and marketing..."
       />
       <Card
         avatar={SvgTomAvatar}
@@ -28,7 +27,7 @@ const AboutPage = () => {
           { Icon: IconLinkedIn, url: `https://linkedin.com/in/tomatbearjam` },
           { Icon: IconGitHub, url: `https://github.com/mysterybear` },
         ]}
-        body="Tom is really good"
+        body="Tom is a React developer with a background in systems engineering..."
       />
     </div>
   );
