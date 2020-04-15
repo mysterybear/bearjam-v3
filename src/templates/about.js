@@ -32,6 +32,7 @@ const AboutTemplate = ({
           social
         }) => (
             <Card
+              className="mt-16"
               avatar={avatars[name]}
               name={name}
               email={email}

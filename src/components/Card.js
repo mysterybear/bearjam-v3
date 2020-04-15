@@ -1,24 +1,22 @@
 import React from 'react';
-import { IconInstagram, IconLinkedIn, IconTwitter } from './icons'
-import Link from './Link'
-import SvgTriangle from './SvgTriangle'
+import SvgTriangle from './SvgTriangle';
 
 const Card = ({
+    className,
     name,
     email,
     socialLinks,
     body,
-    avatar: Avatar
+    avatar: Avatar,
+    ...otherProps
 }) => {
     return (
-        <div className="max-w-sm p-5 mt-5 bg-gray-100 rounded-lg border-2 border-gray-300 shadow-lg">
+        <div className={`max-w-sm p-5 mt-5 bg-gray-100 rounded-lg border-2 border-gray-300 shadow-lg ${className}`} {...otherProps} >
             <div className="rounded-lg overflow-hidden -mt-12 shadow-md">
                 <Avatar preserveAspectRatio="xMidYMid slice" />
             </div>
             <div className="flex-col px-5 py-5 text-center">
-                {/* <div className="font-bold text-3xl mb-2">{name}</div> */}
                 <h1>{name}</h1>
-                {/* <div className="font-bold text-base mb-2">{email}</div> */}
                 <h3>{email}</h3>
             </div>
             <div className="flex px-5 justify-center">
@@ -35,7 +33,6 @@ const Card = ({
                     {body}
                     <SvgTriangle className="w-4 inline ml-2" />
                 </p>
-                {/* <div className="max-w-full" src="/img/icons/right-triangle.svg" alt="triangle icon"></div> */}
             </div>
         </div>
     )
