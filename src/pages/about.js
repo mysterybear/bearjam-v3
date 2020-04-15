@@ -1,12 +1,15 @@
 import React from "react";
 import Card from "../components/Card";
 import { IconTwitter, IconInstagram, IconLinkedIn, IconGitHub } from "../components/icons";
+import SvgMagAvatar from '../components/SvgMagAvatar';
+import SvgTomAvatar from '../components/SvgTomAvatar';
 
 const AboutPage = () => {
   return (
     <div>
       <h1>sweet and lovely</h1>
       <Card
+        avatar={SvgMagAvatar}
         name="Magda"
         email="magda@bearjam.dev"
         socialLinks={[
@@ -17,6 +20,7 @@ const AboutPage = () => {
         body="Magda is a digital designer with a background in film, photography and marketing."
       />
       <Card
+        avatar={SvgTomAvatar}
         name="Tom"
         email="tom@bearjam.dev"
         socialLinks={[

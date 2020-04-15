@@ -6,11 +6,14 @@ const Card = ({
   name,
   email,
   socialLinks,
-  body
+  body,
+  avatar: Avatar
 }) => {
   return (
     <div className="max-w-sm p-5 mt-5 bg-gray-100 rounded-lg border-2 border-gray-300 shadow-lg">
-      <img className="w-full -mt-16" src="/img/svg/mag-avatar.svg" alt="mag face"></img>
+        <div>
+            <Avatar/>
+        </div>
       <div className="flex-col px-5 py-5 text-center">
         <div className="font-bold text-3xl mb-2">{name}</div>
         <div className="font-bold text-base mb-2">{email}</div>
