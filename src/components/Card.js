@@ -11,8 +11,8 @@ const Card = ({
 }) => {
   return (
     <div className="max-w-sm p-5 mt-5 bg-gray-100 rounded-lg border-2 border-gray-300 shadow-lg">
-        <div>
-            <Avatar/>
+        <div className="rounded-lg overflow-hidden -mt-12 shadow-md">
+            <Avatar preserveAspectRatio="xMidYMid slice"/>
         </div>
       <div className="flex-col px-5 py-5 text-center">
         <div className="font-bold text-3xl mb-2">{name}</div>
