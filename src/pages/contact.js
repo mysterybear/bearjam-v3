@@ -11,16 +11,21 @@ const ContactPage = () => {
     <Presence key="contactPage" {...defaultVariants}>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Name" name="Name" ref={register({ required: true, maxLength: 50 })} />
-        <input type="email" placeholder="Email" name="Email" ref={register({ required: true })} />
+        <div className="border-2 rounded-lg">
 
-        <input name="Project Type" type="radio" value="Website" ref={register({ required: true })} />
-        <input name="Project Type" type="radio" value=" PWA" ref={register({ required: true })} />
-        <input name="Project Type" type="radio" value=" eCommerce" ref={register({ required: true })} />
-        <input name="Project Type" type="radio" value=" Other" ref={register({ required: true })} />
-        <textarea name="Description" ref={register({ required: true })} />
+          <div className="mt-4 ml-2 font-bold">
+            <p className="ml-1">Name</p>
+          <input type="text" className="border-2 rounded-md bg-gray-100" name="Name" ref={register({ required: true, maxLength: 50 })} />
+          </div>
+          <div className="mt-4 ml-2 font-bold">
+            <p className="ml-1">Email</p>
+          <input type="email" className="border-2 rounded-md bg-gray-100" name="Email" ref={register({ required: true })} />
+          </div>
 
-        <input type="submit" />
+          <textarea name="Description" ref={register({ required: true })} />
+
+          <input type="submit" />
+        </div>
       </form>
     </Presence>
   );
