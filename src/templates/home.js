@@ -42,8 +42,8 @@ const HomeTemplate = ({
           className="my-6 text-center sm:flex-1 sm:text-left sm:max-w-xs"
           variants={variants(0)}
         >
-          <h1 className="leading-10">Let’s build lovely web experiences</h1>
-          <p className="leading-6 tracking-wide my-6">You can learn with us by reading our blog, and you can work with us.</p>
+          <h1 className="leading-10">{frontmatter.headline.heading}</h1>
+          <p className="leading-6 tracking-wide my-6">{frontmatter.headline.paragraph}</p>
           <div className="flex justify-center mt-6 sm:justify-start">
             <ButtonLink to="/blog">Read blog</ButtonLink>
           </div>
@@ -53,7 +53,7 @@ const HomeTemplate = ({
         <motion.h1
           className="leading-10 text-center sm:text-left"
           variants={variants(0)}
-        >What stuff do we do?<br />Let us tell you</motion.h1>
+        >{frontmatter.stuffWeDo.heading}</motion.h1>
         <div className="flex flex-wrap justify-between">
           {frontmatter.stuffWeDo.blurbs.map(({ heading, blurb }, i) => (
             <motion.div
