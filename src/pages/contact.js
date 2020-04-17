@@ -56,7 +56,8 @@ const ContactPage = () => {
                 {...ps}
                 key={ps.name}
                 ref={register}
-                className={cx('transition duration-150 ease-in-out border-2 rounded-md shadow-sm py-1 px-2 m-1 inline-block text-sm', watch()[ps.name] ? 'bg-red-500' : 'bg-transparent')}
+                tabIndex={0}
+                className={cx('transition duration-150 ease-in-out border-2 rounded-md shadow-sm py-1 px-2 m-1 inline-block text-sm hover:bg-pink-200 focus:outline-none focus:shadow-outline', watch()[ps.name] ? 'bg-pink-400' : 'bg-transparent')}
               />
             ))}
           </div>
