@@ -79,6 +79,7 @@ const Header = () => {
                   exit={{ opacity: 0 }}
                 >
                   <SvgMenu
+                    tabIndex={screen > 0 ? -1 : 0}
                     className={screen < 1 ? "w-6 mr-2" : "hidden"}
                     open={open}
                     onClick={toggle}
@@ -114,6 +115,7 @@ const Header = () => {
                         className="pointer-events-auto my-8 text-xl tracking-widest"
                         key={href}
                         to={href}
+                        tabIndex={open ? 0 : -1}
                         initial="closed"
                         custom={{ active: href === pathname }}
                         variants={{

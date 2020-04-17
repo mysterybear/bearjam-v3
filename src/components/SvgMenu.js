@@ -7,9 +7,9 @@ function SvgMenu({ open, ...props }) {
 
   const paths = {
     cross: [
-    { d: line([[4, 4], [16, 16]]) },
-    { d: line([[4, 4], [16, 16]]) },
-    { d: line([[4, 16], [16, 4]]) },
+      { d: line([[4, 4], [16, 16]]) },
+      { d: line([[4, 4], [16, 16]]) },
+      { d: line([[4, 16], [16, 4]]) },
     ],
     menu: [
       { d: line([[2, 5], [18, 5]]) },
@@ -21,7 +21,8 @@ function SvgMenu({ open, ...props }) {
   const menuSprings = useSprings(3, open ? paths.cross : paths.menu)
 
   return (
-    <svg viewBox="0 0 20 20" {...props}>
+    <button {...props}>
+      <svg viewBox="0 0 20 20" >
         {menuSprings.map(({ d }, i) => (
           <animated.path
             key={i}
@@ -31,7 +32,8 @@ function SvgMenu({ open, ...props }) {
             strokeLinecap="round"
           />
         ))}
-    </svg>
+      </svg>
+    </button>
   );
 }
 
