@@ -7,8 +7,7 @@ function SvgTriangle(props) {
         <path d="M8 5.5L1.25 9.397V1.603L8 5.5z" fill="#A779E9" />
         <path
           d="M1.5 2.036l6 3.464-6 3.464V2.036z"
-          stroke="#6F6F6F"
-          strokeWidth={0.5}
+          strokeWidth={0}
         />
       </g>
       <defs>

@@ -24,7 +24,7 @@ const AboutTemplate = ({
 }) => {
   return (
     <Presence key="aboutPage" {...defaultVariants}>
-      <div>
+      <div className="sm:flex justify-around">
         {frontmatter.cards.map(({
           name,
           email,
@@ -32,7 +32,7 @@ const AboutTemplate = ({
           social
         }) => (
             <Card
-              className="mt-16"
+              className="mt-16 sm:w-5/12"
               avatar={avatars[name]}
               name={name}
               email={email}

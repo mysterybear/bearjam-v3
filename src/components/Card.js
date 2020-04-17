@@ -1,5 +1,6 @@
 import React from 'react';
 import SvgTriangle from './SvgTriangle';
+import { motion } from 'framer-motion';
 
 const Card = ({
     className,
@@ -22,9 +23,9 @@ const Card = ({
             <div className="flex px-5 justify-center">
                 {socialLinks.map(({ Icon, url }) => (
                     <a href={url}>
-                        <div className="rounded-full bg-purple-300 p-2 mx-2">
+                        <motion.div whileHover={{ scale: 1.2 }} className="rounded-full bg-purple-300 p-2 mx-2 shadow-md hover:bg-purple-400 transition-colors duration-300 ease-in-out">
                             <Icon className="w-8 text-purple-100 fill-current stroke-none" />
-                        </div>
+                        </motion.div>
                     </a>
                 ))}
             </div>

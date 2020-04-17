@@ -22,7 +22,7 @@ function SvgTomAvatar(props) {
       <path
         fill="#f2b6bc"
         d="M-.45-.053h211.666v211.667H-.45z"
-        opacity={0.493}
+        opacity={0.8}
       />
       <g transform="translate(-4.36 -13.207)">
         <path
