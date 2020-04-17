@@ -22,8 +22,14 @@ const ContactPage = () => {
   return (
     <Presence key="contactPage" {...defaultVariants}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" placeholder="Name" name="name" ref={register({ required: true, maxLength: 50 })} />
-        <input type="email" placeholder="Email" name="email" ref={register({ required: true })} />
+        <div className="mt-4 ml-2 font-bold">
+          <label for="name" className="ml-1">Name</label>
+          <input type="text" id="name" name="name" className="border-2 rounded-md bg-gray-100" name="Name" ref={register({ required: true, maxLength: 50 })} />
+        </div>
+        <div className="mt-4 ml-2 font-bold">
+          <label for="email" className="ml-1">Email</label>
+          <input type="email" id="email" name="email" className="border-2 rounded-md bg-gray-100" name="Email" ref={register({ required: true })} />
+        </div>
 
         {[
           { name: "website", label: "Website" },
@@ -41,8 +47,13 @@ const ContactPage = () => {
         ))}
 
         <textarea name="description" ref={register({ required: true })} />
+        <div className="border-2 rounded-lg">
 
-        <input type="submit" />
+
+          <textarea name="Description" ref={register({ required: true })} />
+
+          <input type="submit" />
+        </div>
       </form>
     </Presence>
   );
