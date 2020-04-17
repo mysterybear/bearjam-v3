@@ -30,21 +30,26 @@ const ContactPage = () => {
           <label for="email" className="ml-1">Email</label>
           <input type="email" id="email" name="email" className="border-2 rounded-md bg-gray-100" name="Email" ref={register({ required: true })} />
         </div>
+        <div className="mt-4 ml-2 font-bold">
+          <label for="need" className="ml-1">What do you need?</label>
+        </div>
 
-        {[
-          { name: "website", label: "Website" },
-          { name: "pwa", label: "PWA" },
-          { name: "mobileApp", label: "Mobile App" },
-          { name: "webApp", label: "Web App" },
-          { name: "branding", label: "Branding" },
-        ].map(ps => (
-          <CheckBox
-            {...ps}
-            key={ps.name}
-            ref={register}
-            className={cx('transition duration-150 ease-in-out', watch()[ps.name] ? 'bg-red-500' : 'bg-transparent')}
-          />
-        ))}
+        <div className="flex flex-wrap border-2 border-red-500 justify-evenly max-w-full">
+          {[
+            { name: "website", label: "Website" },
+            { name: "mobileApp", label: "Mobile App" },
+            { name: "webApp", label: "Web App" },
+            { name: "branding", label: "Branding" },
+            { name: "other", label: "Other" },
+          ].map(ps => (
+            <CheckBox
+              {...ps}
+              key={ps.name}
+              ref={register}
+              className={cx('transition duration-150 ease-in-out border-2 rounded-md mx-16 inline-block', watch()[ps.name] ? 'bg-red-500' : 'bg-transparent')}
+            />
+          ))}
+        </div>
 
         <textarea name="description" ref={register({ required: true })} />
         <div className="border-2 rounded-lg">
