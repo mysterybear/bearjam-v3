@@ -11,7 +11,7 @@ const CheckBox = forwardRef(({
 }, ref) => (
     <div {...otherProps}>
       <label htmlFor={name}>{label}</label>
-      <input className="hidden" type="checkbox" id={name} name={name} ref={ref} />
+      <input className="w-0 h-0 opacity-0" type="checkbox" id={name} name={name} ref={ref} tabIndex={0} />
     </div>
   ))
 
@@ -56,8 +56,7 @@ const ContactPage = () => {
                 {...ps}
                 key={ps.name}
                 ref={register}
-                tabIndex={0}
-                className={cx('transition duration-150 ease-in-out border-2 rounded-md shadow-sm py-1 px-2 m-1 inline-block text-sm hover:bg-pink-200 focus:outline-none focus:shadow-outline', watch()[ps.name] ? 'bg-pink-400' : 'bg-transparent')}
+                className={cx('transition duration-150 ease-in-out border-2 rounded-md shadow-sm py-1 px-2 m-1 inline-block text-sm hover:bg-pink-200 focus-within:outline-none focus-within:shadow-foobar focus-within:border-0', watch()[ps.name] ? 'bg-pink-400' : 'bg-transparent')}
               />
             ))}
           </div>
