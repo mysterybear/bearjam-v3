@@ -67,6 +67,15 @@ const HomeTemplate = ({
           ))}
         </div>
       </section>
+      <section className="mt-12 sm:mt-0 flex border-2 border-red-500 bg-purple-200">
+          <div>
+            <h2>We'd love to hear from you.<br/>Say hello to magda@bearjam.dev</h2>
+          </div>
+          <div className="space-evenly">
+            <ButtonLink to="/about">About us</ButtonLink>
+            <ButtonLink to="/contact">Work with us</ButtonLink>
+          </div>
+      </section>
     </Presence>
   )
 }
