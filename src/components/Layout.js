@@ -14,6 +14,7 @@ import useMedia from '../hooks/useMedia'
 import Footer from './Footer'
 import Header from './Header'
 import './styles/global.css'
+import { motion } from 'framer-motion'
 
 const Layout = ({ children }) => {
 
@@ -23,10 +24,31 @@ const Layout = ({ children }) => {
   return (
     <MediaContext.Provider value={screen}>
       <Header key="header" />
+      <motion.main
+        className="flex flex-col min-h-full"
+      >
         <AnimatePresence exitBeforeEnter>
           {children}
-          <Footer key="footer" />
+          <Footer
+            key="footer"
+            animate="enter"
+            initial="exit"
+            exit="exit"
+            variants={{
+              enter: {
+                y: 0
+              },
+              exit: {
+                y: 500
+              }
+            }}
+            transition={{
+              type: 'spring',
+              damping: 50
+            }}
+          />
         </AnimatePresence>
+      </motion.main>
     </MediaContext.Provider>
   )
 }

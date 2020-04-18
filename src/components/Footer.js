@@ -12,34 +12,39 @@ import SvgBearjamTitle from "./SvgBearjamTitle"
 
 const socStyles = "w-5 text-white fill-current mx-2"
 
-const Footer = ({...props, className}) => {
+const defaultClassName = "py-10 flex flex-col items-center sm:relative sm:pt-12 sm:pb-4"
+
+const Footer = ({ className, ...restProps }) => {
   return (
-    // <footer className="bg-blue-900 flex flex-col items-center">
-    <motion.footer className={cx(styles.root, "py-10 flex flex-col items-center sm:relative sm:pt-12 sm:pb-4", className)} {...props}>
-      <motion.nav
-        className="flex flex-col text-center sm:flex-row"
-      >
-        {links.map(({ href, label }) => (
-          <Link
-            className="mb-4 text-gray-100 sm:mb-0 sm:mx-8 lg:mx-12 sm:mt-8 sm:mb-3"
-            key={href}
-            to={href}
-          >
-            {label}
-          </Link>
-        ))}
-      </motion.nav>
-      <hr className="border-gray-500 w-40 sm:w-full sm:max-w-2xl lg:max-w-4xl sm:my-3" />
-      <div className="flex flex-col items-center sm:absolute sm:top-0 sm:mt-3">
-        <SvgBearjamAvatar className="w-12 mt-4 sm:w-10" />
-        <SvgBearjamTitle className="w-32 mt-4 sm:w-16" />
-      </div>
-      <div className="flex mt-4 sm:mt-0 sm:mb-3 sm:mt-3">
-        <IconGitHub className={socStyles} />
-        <IconTwitter className={socStyles} />
-        <IconLinkedIn className={socStyles} />
-      </div>
-    </motion.footer>
+
+    <div className={styles.root} {...restProps}>
+      <motion.footer className={cx(styles.footer, defaultClassName, className)} {...restProps}>
+        <motion.nav
+          className="flex flex-col text-center sm:flex-row"
+        >
+          {links.map(({ href, label }) => (
+            <Link
+              className="mb-4 text-gray-100 sm:mb-0 sm:mx-8 lg:mx-12 sm:mt-8 sm:mb-3"
+              key={href}
+              to={href}
+            >
+              {label}
+            </Link>
+          ))}
+        </motion.nav>
+        <hr className="border-gray-500 w-40 sm:w-full sm:max-w-2xl lg:max-w-4xl sm:my-3" />
+        <div className="flex flex-col items-center sm:absolute sm:top-0 sm:mt-3">
+          <SvgBearjamAvatar className="w-12 mt-4 sm:w-10" />
+          <SvgBearjamTitle className="w-32 mt-4 sm:w-16" />
+        </div>
+        <div className="flex mt-4 sm:mt-0 sm:mb-3 sm:mt-3">
+          <IconGitHub className={socStyles} />
+          <IconTwitter className={socStyles} />
+          <IconLinkedIn className={socStyles} />
+        </div>
+
+      </motion.footer>
+    </div>
   )
 }
 export default Footer
