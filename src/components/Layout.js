@@ -17,18 +17,16 @@ import './styles/global.css'
 
 const Layout = ({ children }) => {
 
-useEffect(() => { console.log(`layout rendered`)}, [])
+  useEffect(() => { console.log(`layout rendered`) }, [])
 
   const screen = useMedia()
   return (
     <MediaContext.Provider value={screen}>
       <Header key="header" />
-      <main className="flex-1-0-auto max-w-4xl mx-auto pt-16 px-2 mb-12 sm:mb-20 sm:px-4 lg:px-0">
         <AnimatePresence exitBeforeEnter>
           {children}
+          <Footer key="footer" />
         </AnimatePresence>
-      </main>
-      <Footer key="footer" />
     </MediaContext.Provider>
   )
 }

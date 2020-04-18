@@ -12,10 +12,10 @@ import SvgBearjamTitle from "./SvgBearjamTitle"
 
 const socStyles = "w-5 text-white fill-current mx-2"
 
-const Footer = () => {
+const Footer = ({...props, className}) => {
   return (
     // <footer className="bg-blue-900 flex flex-col items-center">
-    <footer className={cx(styles.root, "py-10 flex flex-col items-center sm:relative sm:pt-12 sm:pb-4")}>
+    <motion.footer className={cx(styles.root, "py-10 flex flex-col items-center sm:relative sm:pt-12 sm:pb-4", className)} {...props}>
       <motion.nav
         className="flex flex-col text-center sm:flex-row"
       >
@@ -39,7 +39,7 @@ const Footer = () => {
         <IconTwitter className={socStyles} />
         <IconLinkedIn className={socStyles} />
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 export default Footer
