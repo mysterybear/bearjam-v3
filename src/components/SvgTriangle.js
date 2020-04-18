@@ -1,8 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function SvgTriangle(props) {
   return (
-    <svg viewBox="0 0 11 13" fill="none" {...props}>
+    <motion.svg viewBox="0 0 11 13" fill="none" {...props}>
       <g filter="url(#purple-triangle_svg__filter0_d)">
         <path d="M8 5.5L1.25 9.397V1.603L8 5.5z" fill="#A779E9" />
         <path
@@ -32,7 +33,7 @@ function SvgTriangle(props) {
           <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
         </filter>
       </defs>
-    </svg>
+    </motion.svg>
   );
 }
 

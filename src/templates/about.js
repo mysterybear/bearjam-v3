@@ -24,7 +24,7 @@ const AboutTemplate = ({
 }) => {
   return (
     <Presence key="aboutPage" {...defaultVariants}>
-      <div className="sm:flex justify-around">
+      <div className="">
         {frontmatter.cards.map(({
           name,
           email,
