@@ -39,6 +39,10 @@ a {
   @apply font-semibold;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @tailwind components;
 @tailwind utilities;
 
