@@ -1,10 +1,11 @@
-import * as R from 'ramda';
 import React from 'react';
 import AboutTemplate from './about';
 import HomeTemplate from './home';
+import _ from 'lodash'
+import PostTemplate from './post';
 
 const templateComponents = {
-  default: x => x,
+  default: PostTemplate,
   home: HomeTemplate,
   about: AboutTemplate,
 }
@@ -15,8 +16,8 @@ const TemplateIndex = ({
   },
   children
 }) => {
-  const templateKey = R.propOr('default', frontmatter.templateKey)
-  const Template = templateKey(templateComponents)
+  const templateKey = _.get(frontmatter, 'templateKey', 'default')
+  const Template = templateComponents[templateKey]
 
   return (
     <Template frontmatter={frontmatter}>
