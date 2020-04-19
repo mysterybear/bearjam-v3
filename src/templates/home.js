@@ -69,12 +69,14 @@ const HomeTemplate = ({
           </div>
         </section>
       </Presence>
-      <section className="mt-12 sm:mt-0 flex border-2 border-red-500 bg-purple-200">
-        <div>
+      <section className="mt-2 sm:mt-0 flex flex-col border-2 border-red-500 bg-purple-200">
+        <div className="mt-4 mx-2">
           <h2>We'd love to hear from you.<br />Say hello to magda@bearjam.dev</h2>
         </div>
-        <div className="space-evenly">
+        <div className="mt-6 flex justify-center">
           <ButtonLink to="/about">About us</ButtonLink>
+        </div>
+        <div className="mt-4 mb-6 flex justify-center">
           <ButtonLink to="/contact">Work with us</ButtonLink>
         </div>
       </section>
