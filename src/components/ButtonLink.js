@@ -1,6 +1,10 @@
 import React from 'react'
 import Button from './Button'
 import Link from './Link'
+import cx from 'classnames'
+
+const defaultClassName =
+  ""
 
 const ButtonLink = ({
   className,
@@ -9,7 +13,7 @@ const ButtonLink = ({
   ...props
 }) => {
  return (
-   <Button className={className} {...props}>
+   <Button className={cx(defaultClassName, className)} {...props}>
      <Link to={to}>{children}</Link>
    </Button>
  );
