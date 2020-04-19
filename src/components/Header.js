@@ -40,7 +40,7 @@ const Header = () => {
         <Link to="/">
           <div className="flex items-center">
             <SvgBearjamAvatar className="w-12 p-2 ml-1" />
-            <SvgBearjamTitle className="w-24 ml-1" />
+            <SvgBearjamTitle className="w-24 mx-2" />
           </div>
         </Link>
         <AnimatePresence exitBeforeEnter>
