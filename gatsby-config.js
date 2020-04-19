@@ -19,14 +19,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`
+        path: `${__dirname}/src/pages/blog`
       }
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: `${__dirname}/src/templates/index.js`
+          default: `${__dirname}/src/templates/index.js`,
         }
       }
     }

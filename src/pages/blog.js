@@ -4,6 +4,7 @@ import Presence from "../components/Presence"
 import { graphql, Link } from "gatsby"
 import SEO from "../components/SEO"
 
+
 const aniProps = {
   variants: {
     enter: {
