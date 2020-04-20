@@ -2,6 +2,7 @@ import React from 'react';
 import SvgTriangle from './SvgTriangle';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import theme from 'tailwindcss/defaultTheme';
 
 const Card = ({
   className,
@@ -12,7 +13,7 @@ const Card = ({
   avatar: Avatar,
   ...otherProps
 }) => {
-  const [ open, setOpen ] = useState(false)
+  const [open, setOpen] = useState(false)
   return (
     <div className={`max-w-sm p-5 mt-5 bg-gray-100 rounded-lg border-2 border-gray-300 shadow-lg ${className}`} {...otherProps} >
       <div className="rounded-lg overflow-hidden -mt-12 shadow-md">
@@ -32,12 +33,24 @@ const Card = ({
         ))}
       </div>
       <div className="inline-block px-2 py-5">
-        <p className="inline text-sm">
-          {body}
-        </p>
-        <button className="w-5 ml-3 absolute focus:outline-none select-none" onClick={() => setOpen(!open)}>
-          <SvgTriangle initial={{ rotate: 90, originX: 1, originY: 1}} animate={open ? { rotate: 150 } : { rotate: 90 }} />
-        </button>
+        <motion.p
+          className="relative overflow-hidden text-base leading-normal"
+          animate={open ? { height: 'auto' } : { height: '4.5em' }}
+          transition={{ type: 'spring', damping: 20, stiffness: 75, mass: 0.4 }}
+        >
+          <span>{body}</span>
+          <motion.button
+            className="w-5 absolute focus:outline-none select-none right-0 bottom-0"
+            onClick={() => setOpen(!open)}
+            initial={{
+              rotate: 90,
+              backgroundImage: 'radial-gradient(circle at center, rgba(247,250, 252, 1) 50%, rgba(247,250,252,0.40379901960784315) 100%)'
+            }}
+            animate={open ? { rotate: 150 } : { rotate: 90 }}
+          >
+            <SvgTriangle />
+          </motion.button>
+        </motion.p>
       </div>
     </div>
   )
