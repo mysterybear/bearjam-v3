@@ -33,7 +33,6 @@ const AboutTemplate = ({
         }) => (
             <Card
               key={name}
-              className="mt-16 sm:w-5/12"
               avatar={avatars[name]}
               name={name}
               email={email}
